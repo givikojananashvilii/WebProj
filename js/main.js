@@ -1,7 +1,4 @@
-/**
- * AquaStyle — Main JavaScript
- * No external libraries or frameworks
- */
+// aquastyle scripts
 
 document.addEventListener("DOMContentLoaded", function () {
   initMobileMenu();
@@ -10,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   initContactForm();
 });
 
-/* --- Mobile Navigation Toggle --- */
+// mobile menu
 function initMobileMenu() {
   var toggle = document.querySelector(".menu-toggle");
   var nav = document.querySelector(".main-nav");
@@ -34,7 +31,7 @@ function initMobileMenu() {
   }
 }
 
-/* --- Back to Top Button --- */
+// back to top button
 function initBackToTop() {
   var btn = document.querySelector(".back-to-top");
   if (!btn) return;
@@ -52,7 +49,7 @@ function initBackToTop() {
   });
 }
 
-/* --- Gallery Filter --- */
+// gallery filtering
 function initGalleryFilter() {
   var filterBtns = document.querySelectorAll(".filter-btn");
   var galleryItems = document.querySelectorAll(".gallery-item");
@@ -80,7 +77,7 @@ function initGalleryFilter() {
   }
 }
 
-/* --- Contact Form Validation --- */
+// contact form check
 function initContactForm() {
   var form = document.getElementById("contact-form");
   if (!form) return;

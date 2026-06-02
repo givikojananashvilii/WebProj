@@ -1,27 +1,27 @@
-/* ============================================
-   AquaStyle — საცურაო ნივთების მაღაზია
-   Color formats: HEX, RGB, RGBA
-   ============================================ */
 
-/* --- CSS Variables & Reset --- */
+/* color formats used: HEX, RGB, RGBA */
+:root {
+  --primary: #0077b6;            /* HEX */
+  --secondary: rgb(0, 180, 216); /* RGB */
+  --accent: #ff6b6b;
+  --accent-dark: #e85555;
+  --dark: #023e8a;
+  --light: rgb(240, 248, 255);
+  --text: #212529;
+  --muted: rgb(108, 117, 125);
+  --white: #ffffff;
+  --border: #dee2e6;
+  --shadow: rgba(0, 0, 0, 0.12); /* RGBA */
+  --transition: 0.25s ease;
+}
+
+/* reset */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-:root {
-  --primary: #0077b6;             /* HEX */
-  --secondary: rgb(0, 180, 216);  /* RGB */
-  --accent: rgba(255, 107, 107, 0.95); /* RGBA */
-  --dark: #023e8a;
-  --light: rgb(240, 248, 255);
-  --text: rgb(33, 37, 41);
-  --white: #ffffff;
-  --shadow: rgba(0, 0, 0, 0.15);
-  --transition: 0.3s ease;
 }
 
 html {
@@ -38,6 +38,7 @@ body {
   flex-direction: column;
 }
 
+/* highlight color */
 ::selection {
   background-color: var(--primary);
   color: var(--white);
@@ -59,15 +60,15 @@ ul {
   list-style: none;
 }
 
-/* --- Fixed Header (position: fixed) --- */
+/* header */
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: linear-gradient(135deg, var(--primary) 0%, rgb(2, 62, 138) 100%);
-  box-shadow: 0 4px 12px var(--shadow);
+  background: linear-gradient(135deg, var(--primary), var(--dark));
+  box-shadow: 0 2px 8px var(--shadow);
 }
 
 .header-inner {
@@ -84,14 +85,13 @@ ul {
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--white);
-  letter-spacing: 1px;
 }
 
 .logo::before {
   content: "🌊 ";
 }
 
-/* --- Navigation (Flex) --- */
+/* nav */
 .main-nav ul {
   display: flex;
   gap: 0.5rem;
@@ -100,27 +100,23 @@ ul {
 .main-nav a {
   color: rgba(255, 255, 255, 0.85);
   padding: 0.5rem 1rem;
-  border-radius: 8px;
+  border-radius: 6px;
   font-weight: 500;
-  transition: background-color var(--transition), color var(--transition), transform var(--transition);
-}
-
-.main-nav a:hover,
-.main-nav a.active {
-  background-color: rgba(255, 255, 255, 0.15);
-  color: var(--white);
+  transition: background-color var(--transition), transform var(--transition);
 }
 
 .main-nav a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: var(--white);
   transform: translateY(-2px);
 }
 
 .main-nav a.active {
   background-color: var(--accent);
-  color: var(--dark);
+  color: var(--white);
 }
 
-/* --- Mobile Menu Toggle --- */
+/* burger */
 .menu-toggle {
   display: none;
   background: none;
@@ -137,7 +133,6 @@ ul {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-/* --- Main Content --- */
 main {
   flex: 1;
   margin-top: 70px;
@@ -149,10 +144,10 @@ main {
   padding: 2rem 1.5rem;
 }
 
-/* --- Hero Section --- */
+/* hero */
 .hero {
   position: relative;
-  min-height: 480px;
+  min-height: 440px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -170,7 +165,7 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 60px;
   background: linear-gradient(transparent, var(--light));
 }
 
@@ -179,37 +174,36 @@ main {
   z-index: 1;
   max-width: 700px;
   padding: 2rem;
-  animation: fadeInUp 1s ease forwards;
+  animation: fadeInUp 0.8s ease;
 }
 
 .hero h1 {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   margin-bottom: 1rem;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.35);
 }
 
 .hero p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  opacity: 0.95;
 }
 
 .btn {
   display: inline-block;
   padding: 0.85rem 2rem;
   background: var(--accent);
-  color: var(--dark);
+  color: var(--white);
   font-weight: 600;
   border-radius: 50px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
-  transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+  transition: transform var(--transition), background-color var(--transition);
 }
 
 .btn:hover {
+  background: var(--accent-dark);
   transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.55);
 }
 
 .btn-secondary {
@@ -222,10 +216,9 @@ main {
 
 .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.15);
-  box-shadow: none;
 }
 
-/* --- Section Titles --- */
+/* section titles */
 .section-title {
   text-align: center;
   margin-bottom: 2.5rem;
@@ -248,12 +241,12 @@ main {
 }
 
 .section-title p {
-  color: rgb(108, 117, 125);
+  color: var(--muted);
   max-width: 600px;
   margin: 0 auto;
 }
 
-/* --- Card Grid (CSS Grid) --- */
+/* cards */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -262,15 +255,15 @@ main {
 
 .card {
   background: var(--white);
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 6px 20px var(--shadow);
+  box-shadow: 0 4px 16px var(--shadow);
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
 .card-image {
@@ -285,7 +278,7 @@ main {
   top: 12px;
   right: 12px;
   background: var(--accent);
-  color: var(--dark);
+  color: var(--white);
   padding: 0.3rem 0.8rem;
   border-radius: 20px;
   font-size: 0.85rem;
@@ -302,7 +295,7 @@ main {
 }
 
 .card-body p {
-  color: rgb(108, 117, 125);
+  color: var(--muted);
   font-size: 0.95rem;
 }
 
@@ -313,14 +306,14 @@ main {
   color: var(--accent);
 }
 
-/* --- Features (Flex) --- */
+/* features */
 .features {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
   padding: 3rem 0;
-  background: linear-gradient(180deg, var(--light) 0%, rgb(233, 236, 239) 100%);
+  background: linear-gradient(180deg, var(--light), rgb(233, 236, 239));
 }
 
 .feature-item {
@@ -329,13 +322,13 @@ main {
   text-align: center;
   padding: 2rem 1.5rem;
   background: var(--white);
-  border-radius: 12px;
+  border-radius: 10px;
   box-shadow: 0 4px 12px var(--shadow);
   transition: transform var(--transition);
 }
 
 .feature-item:hover {
-  transform: rotate(-1deg) scale(1.02);
+  transform: translateY(-4px);
 }
 
 .feature-icon {
@@ -348,7 +341,7 @@ main {
   margin-bottom: 0.5rem;
 }
 
-/* --- About Page --- */
+/* about page */
 .about-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -357,28 +350,16 @@ main {
 }
 
 .about-image {
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px var(--shadow);
   position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px var(--shadow);
 }
 
 .about-image img {
   width: 100%;
   height: 400px;
   object-fit: cover;
-}
-
-.about-image::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  width: 100%;
-  height: 100%;
-  border: 3px solid var(--accent);
-  border-radius: 16px;
-  z-index: -1;
 }
 
 .about-text h2 {
@@ -388,7 +369,7 @@ main {
 
 .about-text p {
   margin-bottom: 1rem;
-  color: rgb(73, 80, 87);
+  color: var(--text);
 }
 
 .stats {
@@ -409,47 +390,10 @@ main {
 
 .stat-item .label {
   font-size: 0.85rem;
-  color: rgb(108, 117, 125);
+  color: var(--muted);
 }
 
-/* --- Team Grid --- */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.team-member {
-  text-align: center;
-  padding: 2rem 1rem;
-  background: var(--white);
-  border-radius: 12px;
-  box-shadow: 0 4px 12px var(--shadow);
-}
-
-.team-member:nth-of-type(odd) {
-  border-top: 4px solid var(--primary);
-}
-
-.team-member:nth-of-type(even) {
-  border-top: 4px solid var(--accent);
-}
-
-.team-avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin: 0 auto 1rem;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.5rem;
-  color: var(--white);
-}
-
-/* --- Destinations Page --- */
+/* destinations / products */
 .destination-list {
   display: flex;
   flex-direction: column;
@@ -460,14 +404,14 @@ main {
   display: flex;
   gap: 2rem;
   background: var(--white);
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 15px var(--shadow);
+  box-shadow: 0 4px 14px var(--shadow);
   transition: box-shadow var(--transition);
 }
 
 .destination-item:hover {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
 }
 
 .destination-item:nth-of-type(even) {
@@ -505,7 +449,7 @@ main {
   margin-bottom: 1rem;
 }
 
-/* --- Gallery Page --- */
+/* gallery */
 .gallery-filters {
   display: flex;
   justify-content: center;
@@ -522,17 +466,13 @@ main {
   border-radius: 25px;
   cursor: pointer;
   font-weight: 500;
-  transition: background-color var(--transition), color var(--transition), transform var(--transition);
+  transition: background-color var(--transition), color var(--transition);
 }
 
 .filter-btn:hover,
 .filter-btn.active {
   background: var(--primary);
   color: var(--white);
-}
-
-.filter-btn:hover {
-  transform: scale(1.05);
 }
 
 .gallery-grid {
@@ -543,16 +483,10 @@ main {
 
 .gallery-item {
   position: relative;
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
   height: 250px;
-  cursor: pointer;
   box-shadow: 0 4px 12px var(--shadow);
-  transition: transform var(--transition), opacity var(--transition);
-}
-
-.gallery-item:hover {
-  transform: scale(1.03);
 }
 
 .gallery-item.hidden {
@@ -563,11 +497,11 @@ main {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.4s ease;
 }
 
 .gallery-item:hover img {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 .gallery-overlay {
@@ -578,15 +512,14 @@ main {
   padding: 1.5rem 1rem 1rem;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
   color: var(--white);
-  transform: translateY(100%);
-  transition: transform var(--transition);
 }
 
-.gallery-item:hover .gallery-overlay {
-  transform: translateY(0);
+.gallery-overlay h3 {
+  font-size: 1.05rem;
+  font-weight: 500;
 }
 
-/* --- Contact Form --- */
+/* contact form */
 .contact-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -605,13 +538,13 @@ main {
   gap: 1rem;
   padding: 1.25rem;
   background: var(--white);
-  border-radius: 12px;
+  border-radius: 10px;
   box-shadow: 0 4px 12px var(--shadow);
   transition: transform var(--transition);
 }
 
 .info-card:hover {
-  transform: translateX(8px);
+  transform: translateX(6px);
 }
 
 .info-icon {
@@ -630,13 +563,13 @@ main {
 .contact-form {
   background: var(--white);
   padding: 2rem;
-  border-radius: 16px;
+  border-radius: 12px;
   box-shadow: 0 6px 20px var(--shadow);
 }
 
 .contact-form fieldset {
-  border: 2px solid rgb(222, 226, 230);
-  border-radius: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
 }
@@ -664,7 +597,7 @@ main {
 .form-group select {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 2px solid rgb(222, 226, 230);
+  border: 1px solid var(--border);
   border-radius: 8px;
   font-family: inherit;
   font-size: 1rem;
@@ -681,11 +614,11 @@ main {
 
 .form-group input.error,
 .form-group textarea.error {
-  border-color: rgb(220, 53, 69);
+  border-color: #dc3545;
 }
 
 .error-message {
-  color: rgb(220, 53, 69);
+  color: #dc3545;
   font-size: 0.85rem;
   margin-top: 0.3rem;
   display: none;
@@ -708,12 +641,12 @@ main {
 
 .form-success.visible {
   display: block;
-  animation: fadeInUp 0.5s ease;
+  animation: fadeInUp 0.4s ease;
 }
 
-/* --- Page Banner --- */
+/* page banner */
 .page-banner {
-  background: linear-gradient(135deg, var(--primary), rgb(2, 62, 138));
+  background: linear-gradient(135deg, var(--primary), var(--dark));
   color: var(--white);
   text-align: center;
   padding: 3rem 1.5rem;
@@ -724,11 +657,7 @@ main {
   margin-bottom: 0.5rem;
 }
 
-.page-banner p {
-  opacity: 0.9;
-}
-
-/* --- Footer --- */
+/* footer */
 .site-footer {
   background: var(--dark);
   color: rgba(255, 255, 255, 0.8);
@@ -769,7 +698,7 @@ main {
   font-size: 0.85rem;
 }
 
-/* --- Back to Top (position: fixed) --- */
+/* back to top */
 .back-to-top {
   position: fixed;
   bottom: 30px;
@@ -785,7 +714,7 @@ main {
   box-shadow: 0 4px 12px var(--shadow);
   opacity: 0;
   visibility: hidden;
-  transition: opacity var(--transition), visibility var(--transition), transform var(--transition);
+  transition: opacity var(--transition), transform var(--transition);
   z-index: 999;
 }
 
@@ -795,15 +724,15 @@ main {
 }
 
 .back-to-top:hover {
-  transform: translateY(-4px);
   background: var(--secondary);
+  transform: translateY(-4px);
 }
 
-/* --- Animations --- */
+/* animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(25px);
   }
   to {
     opacity: 1;
@@ -824,9 +753,9 @@ main {
   animation: pulse 2s ease infinite;
 }
 
-/* --- Background Image Classes --- */
+/* product images */
 .img-womens {
-  background-image: url("https://images.unsplash.com/photo-1596895111057-46b745c92147?w=600&q=80");
+  background-image: url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80");
 }
 
 .img-mens {
@@ -838,7 +767,7 @@ main {
 }
 
 .img-bikini {
-  background-image: url("https://images.unsplash.com/photo-1596895111057-46b745c92147?w=700&q=80");
+  background-image: url("https://static.vecteezy.com/system/resources/thumbnails/075/216/706/small/a-pair-of-goggles-with-blue-lenses-on-a-blue-background-photo.jpg");
 }
 
 .img-monokini {
@@ -853,7 +782,7 @@ main {
   background-image: url("https://images.unsplash.com/photo-1472162072942-cd5147eb3902?w=700&q=80");
 }
 
-/* --- Responsive --- */
+/* responsive */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -864,7 +793,7 @@ main {
     top: 70px;
     left: 0;
     width: 100%;
-    background: linear-gradient(180deg, rgb(2, 62, 138), var(--primary));
+    background: linear-gradient(180deg, var(--dark), var(--primary));
     max-height: 0;
     overflow: hidden;
     transition: max-height var(--transition);
@@ -872,7 +801,6 @@ main {
 
   .main-nav.open {
     max-height: 350px;
-    box-shadow: 0 8px 16px var(--shadow);
   }
 
   .main-nav ul {

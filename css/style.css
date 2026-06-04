@@ -112,9 +112,7 @@ main {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background:
-    linear-gradient(rgba(2, 62, 138, 0.5), rgba(0, 119, 182, 0.65)),
-    url("https://images.unsplash.com/photo-1519046909850-f79e152e8d32?w=1400&q=80") center/cover no-repeat;
+  background: linear-gradient(135deg, #0077b6, #023e8a);
   color: #ffffff;
   overflow: hidden;
 }
@@ -648,32 +646,16 @@ main {
 }
 
 /* product images */
-.img-womens {
-  background-image: url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80");
-}
-
-.img-mens {
-  background-image: url("https://images.unsplash.com/photo-1591195853828-11db59a194f6?w=600&q=80");
-}
-
-.img-kids {
-  background-image: url("https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=600&q=80");
-}
-
-.img-bikini {
+.img-goggles {
   background-image: url("https://static.vecteezy.com/system/resources/thumbnails/075/216/706/small/a-pair-of-goggles-with-blue-lenses-on-a-blue-background-photo.jpg");
 }
 
-.img-monokini {
-  background-image: url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=80");
+.img-shorts {
+  background-image: url("https://dev-topsport.fra1.digitaloceanspaces.com/uploads/139724/1.avif");
 }
 
-.img-trunks {
-  background-image: url("https://images.unsplash.com/photo-1591195853828-11db59a194f6?w=700&q=80");
-}
-
-.img-kids-swim {
-  background-image: url("https://images.unsplash.com/photo-1472162072942-cd5147eb3902?w=700&q=80");
+.img-umbrella {
+  background-image: url("https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1657293491-51xvil-MhxL._SL500_.jpg?crop=0.990xw:1xh;center,top&resize=980:*");
 }
 
 /* responsive */

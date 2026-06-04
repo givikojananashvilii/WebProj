@@ -35,28 +35,24 @@
 
         <aside class="contact-info">
           <div class="info-card">
-            <div class="info-icon">📍</div>
             <div>
               <h3>მაღაზია</h3>
               <p>შავნაბადას ქ. 15, თბილისი, საქართველო</p>
             </div>
           </div>
           <div class="info-card">
-            <div class="info-icon">📞</div>
             <div>
               <h3>ტელეფონი</h3>
               <p>+995 555 987 654</p>
             </div>
           </div>
           <div class="info-card">
-            <div class="info-icon">📧</div>
             <div>
               <h3>ელ-ფოსტა</h3>
               <p>info@aquastyle.ge</p>
             </div>
           </div>
           <div class="info-card">
-            <div class="info-icon">🕐</div>
             <div>
               <h3>სამუშაო საათები</h3>
               <p>ორშაბათი — შაბათი: 10:00 — 20:00</p>
@@ -66,8 +62,8 @@
 
         <form class="contact-form" id="contact-form" action="#" method="post" novalidate>
 
-          <fieldset>
-            <legend>პირადი ინფორმაცია</legend>
+          <div class="form-section">
+            <h3>პირადი ინფორმაცია</h3>
 
             <div class="form-group">
               <label for="name">სახელი და გვარი</label>
@@ -83,10 +79,10 @@
               <label for="phone">ტელეფონი</label>
               <input type="tel" id="phone" name="phone" placeholder="მაგ: +995 555 123 456">
             </div>
-          </fieldset>
+          </div>
 
-          <fieldset>
-            <legend>შეკვეთის დეტალები</legend>
+          <div class="form-section">
+            <h3>შეკვეთის დეტალები</h3>
 
             <div class="form-group">
               <label for="product">პროდუქტი</label>
@@ -103,10 +99,10 @@
               <label for="message">შეტყობინება</label>
               <textarea id="message" name="message" rows="5" placeholder="მიუთითეთ ზომა, ფერი ან სხვა სურვილი..." required></textarea>
             </div>
-          </fieldset>
+          </div>
 
           <button type="submit" class="btn">შეკვეთის გაგზავნა</button>
-          <div class="form-success" id="form-success">✓ თქვენი შეკვეთა წარმატებით გაიგზავნა!</div>
+          <div class="form-success" id="form-success">თქვენი შეკვეთა წარმატებით გაიგზავნა!</div>
         </form>
 
       </div>
@@ -131,15 +127,19 @@
       </div>
       <div class="footer-section">
         <h3>კონტაქტი</h3>
-        <p>📧 info@aquastyle.ge</p>
-        <p>📞 +995 555 987 654</p>
-        <p>📍 თბილისი, საქართველო</p>
+        <p>info@aquastyle.ge</p>
+        <p>+995 555 987 654</p>
+        <p>თბილისი, საქართველო</p>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 AquaStyle. ყველა უფლება დაცულია.</p>
-    </div>
   </footer>
+
+  <div class="popup-overlay" id="popup">
+    <div class="popup-box">
+      <p id="popup-text"></p>
+      <button type="button" class="btn" id="popup-close">დახურვა</button>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>

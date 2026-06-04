@@ -3,6 +3,14 @@ function checkForm() {
   var form = document.getElementById("contact-form");
   if (!form) return;
 
+  var popup = document.getElementById("popup");
+  var popupText = document.getElementById("popup-text");
+  var popupClose = document.getElementById("popup-close");
+
+  popupClose.addEventListener("click", function () {
+    popup.classList.remove("visible");
+  });
+
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -11,7 +19,8 @@ function checkForm() {
     var message = document.getElementById("message").value.trim();
 
     if (name === "" || email === "" || message === "") {
-      alert("გთხოვთ, შეავსოთ ყველა ველი");
+      popupText.textContent = "გთხოვთ, შეავსოთ ყველა ველი";
+      popup.classList.add("visible");
       return;
     }
 

@@ -1,7 +1,7 @@
 // contact form validation
 function checkForm() {
   var form = document.getElementById("contact-form");
-  if (!form) return;
+  
 
   var popup = document.getElementById("popup");
   var popupText = document.getElementById("popup-text");

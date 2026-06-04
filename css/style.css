@@ -367,10 +367,6 @@ main {
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
 }
 
-.destination-item:nth-of-type(even) {
-  flex-direction: row-reverse;
-}
-
 .destination-img {
   flex: 0 0 350px;
   min-height: 250px;
